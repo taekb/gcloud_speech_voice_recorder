@@ -33,7 +33,6 @@ def speech_recog():
     # The name of the audio file to transcribe
     file_name = os.path.join(
         os.path.dirname(__file__),
-        'resources',
         'RecordedFile.wav')
 
     # Loads the audio into memory
@@ -42,8 +41,7 @@ def speech_recog():
         sample = speech_client.sample(
             content,
             source_uri=None,
-            encoding='LINEAR16',
-            sample_rate_hertz=44100)
+            encoding='LINEAR16')
 
     # Detects speech in the audio file
     try:
@@ -52,7 +50,7 @@ def speech_recog():
     except ValueError:
         detected = False
 
-    outFile = open('/data/gcloudapi/speech/cloud-client/result/result.txt', 'w')
+    outFile = open('result/result.txt', 'w')
     if detected:
         for alternative in alternatives:
             outFile.write(alternative.transcript)
