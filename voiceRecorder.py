@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jul 14 17:37:57 2017
-
-@author: 정택영 (Daniel Jeong)
+@author: Daniel Jeong (https://github.com/taekb)
 """
 
 from flask import Flask, render_template, request
